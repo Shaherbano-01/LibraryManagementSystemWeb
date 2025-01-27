@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Membership Fee Management</title>
+  <link rel="stylesheet" href="two.css">
+</head>
+<body>
+  <h1>Library Membership Fee Management</h1>
+
+  <!-- Members List -->
+  <h3>Members List</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Membership Plan</th>
+        <th>Fee</th>
+        <th>Payment Status</th>
+        <th>Notification Status</th>
+        <th>Fine</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="members-table">
+      <!-- Members dynamically added here -->
+    </tbody>
+  </table>
+
+  <!-- Add New Member Form -->
+  <h3>Add New Member</h3>
+  <form id="add-member-form">
+    <label>ID: <input type="text" id="id" required></label>
+    <label>Name: <input type="text" id="name" required></label>
+    <label>Email: <input type="email" id="email" required></label>
+    <label>Phone: <input type="text" id="phone" required></label>
+    <label>Plan:
+      <select id="plan">
+        <option value="monthly">Monthly - Rs.500</option>
+        <option value="yearly">Yearly - Rs.4500</option>
+      </select>
+    </label>
+    <button type="submit" class="btn">Add Member</button>
+  </form>
+
+  <!-- Lost/Damaged or Late Submission Fine Form -->
+  <h3>Fine for Lost/Damaged Book</h3>
+  <form id="report-fine-form">
+    <label>Member ID: <input type="text" id="fine-id" required></label>
+    <label>Book Fine: <input type="number" id="fine-amount" required></label>
+    <button type="button" onclick="applyFine()">Save</button>
+  </form>
+
+  <!-- Notification Settings -->
+  <h3>Notification Settings</h3>
+  <form id="notification-settings">
+    <label>Notify via Email:
+      <input type="checkbox" id="notify-email" checked>
+    </label>
+    <label>Notify via SMS:
+      <input type="checkbox" id="notify-sms">
+    </label>
+    <label>Notify via Web:
+      <input type="checkbox" id="notify-web" checked>
+    </label>
+    <button type="button" class="btn" onclick="saveNotificationSettings()">Save Settings</button>
+  </form>
+
+  <div id="notifications">
+    <h3>Recent Notifications</h3>
+    <ul id="notifications-list">
+      <!-- Notifications dynamically added here -->
+    </ul>
+  </div>
+
+  <script src="three.js"></script>
+</body>
+</html>
